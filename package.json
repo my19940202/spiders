@@ -1,0 +1,16 @@
+{
+  "name": "spiders",
+  "version": "0.0.0",
+  "description": "爬虫资源抓取实验",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xishengbo <xishengbo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.17.0",
+    "eventproxy": "^0.3.1",
+    "superagent": "^0.20.0"
+  }
+}
