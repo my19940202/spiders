@@ -35,7 +35,7 @@ function getContent(sres) {
     var texts = $('td.t_f')[0];
     var contents = '';
 
-    // 不清楚这样写法的原因 但是这样写能获取正确的对象
+    // cheerio 版本变化 正确获取元素的办法 变化
     var $element = $(texts);
     // 处理帐号密码的文字
     contents = $element.text();
@@ -55,4 +55,8 @@ function getContent(sres) {
     
 }
 //  run
-sag(TARGET_URL, getLatestUrl);
+function thunderAccounts() {
+    sag(TARGET_URL, getLatestUrl);
+}
+
+exports.thunderAccounts = thunderAccounts;
