@@ -1,4 +1,3 @@
 target/
 *.svn*
 nohup.out
-node_modules
