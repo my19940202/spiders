@@ -39,25 +39,26 @@ function getContent(sres) {
     var $element = $(texts);
     // 处理帐号密码的文字
     contents = $element.text();
-    contents = contents.replace(/[^a-z0-9:/\s]/g,'');
+    contents = contents.replace(/vip/g, '').replace(/[^a-z0-9:/\s]/g,'');
+    console.log(contents);
     var tmpArr = contents.split('\n');
     var resultsArr = ['帐号\t密码'];
     tmpArr.map(function (val) {
-        // var tmpIdx = val.indexOf(':');
-        // if (tmpIdx > 0) {
-        //     // 在帐号和密码之前加上空格
-        //     var tmpStr = ':' + val[tmpIdx + 1];
-        //     val = val.replace(tmpStr,(tmpStr + '\t'));
-        //     resultsArr.push(val);
-        // }
-        
-        if (val.match(/\d{9,}/g)) {
-            var psw = '521xunlei.com';
-            var content = val.match(/\d{9,}/g)[0] + '\t' + psw;
-            resultsArr.push(content);
+        var tmpIdx = val.indexOf(':');
+        if (tmpIdx > 0) {
+            // 在帐号和密码之前加上空格
+            var tmpStr = ':' + val[tmpIdx + 1];
+            val = val.replace(tmpStr,(tmpStr + '\t'));
+            resultsArr.push(val);
         }
+        
+        // if (val.match(/\d{9,}/g)) {
+        //     var psw = '521xunlei.com';
+        //     var content = val.match(/\d{9,}/g)[0] + '\t' + psw;
+        //     resultsArr.push(content);
+        // }
     });
-    console.log(resultsArr.join('\n'));
+    // console.log(resultsArr.join('\n'));
     
 }
 //  run
